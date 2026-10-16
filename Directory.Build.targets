@@ -1,0 +1,4 @@
+<Project>
+  <!-- Nexaflow integration (nexaflow branch only; never upstreamed): stops MSBuild's walk-up here, so Nexaflow's own
+       Directory.Build.targets is not applied to this repository's projects. -->
+</Project>

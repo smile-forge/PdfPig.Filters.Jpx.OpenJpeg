@@ -42,7 +42,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="PdfPig" Version="0.1.16" />
+		<PackageReference Include="PdfPig" Version="0.1.16" Condition="!Exists('$(PdfPigSource)')" />
+		<ProjectReference Include="$(PdfPigSource)" Condition="Exists('$(PdfPigSource)')" />
 	</ItemGroup>
 
 	<ItemGroup>

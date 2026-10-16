@@ -1,0 +1,14 @@
+<Project>
+  <!-- Nexaflow integration (nexaflow branch only; never upstreamed).
+
+       Built as a submodule of Nexaflow this repo would otherwise inherit Nexaflow's own Directory.Build.props through
+       MSBuild's walk-up - its x64 platform and its warning settings - so this file stops the walk here.
+
+       It also says where PdfPig's source is: Nexaflow builds PdfPig from its smile-forge fork beside this one in
+       external/, and this filter must compile against that same PdfPig, not the NuGet package of it, or the app
+       would load two different UglyToad.PdfPig assemblies. Built on its own, with no sibling checkout, the package
+       reference stands. -->
+  <PropertyGroup>
+    <PdfPigSource>$(MSBuildThisFileDirectory)..\PdfPig\src\UglyToad.PdfPig\UglyToad.PdfPig.csproj</PdfPigSource>
+  </PropertyGroup>
+</Project>
