@@ -8,7 +8,10 @@
        external/, and this filter must compile against that same PdfPig, not the NuGet package of it, or the app
        would load two different UglyToad.PdfPig assemblies. Built on its own, with no sibling checkout, the package
        reference stands. -->
+  <!-- Optimised in every configuration, as PdfPig is: an image codec is the hottest code a page with a picture runs,
+       and Nexaflow's Debug build is how the app is run day to day. Symbols are still produced. -->
   <PropertyGroup>
+    <Optimize>true</Optimize>
     <PdfPigSource>$(MSBuildThisFileDirectory)..\PdfPig\src\UglyToad.PdfPig\UglyToad.PdfPig.csproj</PdfPigSource>
   </PropertyGroup>
 </Project>
